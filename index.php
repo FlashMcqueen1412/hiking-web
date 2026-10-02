@@ -11,17 +11,17 @@
     <h1>Time to hike</h1>
 <section>
     <form action="hike.php" method="post">
-        <label for="name">Enter your name:</label>
+        <label for="name">Enter your username:</label>
         <input type="text" id="name" name="name" required>
         <label for="password">Enter your password:</label>
         <input type="password" id="password" name="password" required>
         <label for="hike">Choose your hike:</label>
         <select name="hike" id="hike">
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
+            <option value="/php/easy.php">Easy</option>
+            <option value="/php/medium.php">Medium</option>
+            <option value="/php/hard.php">Hard</option>
         </select>
-        <input type="submit" value="Start Hike">
+        <button type="submit">Start Hike</button>
     </form>
 </section>
 
