@@ -1,0 +1,42 @@
+/* Font Styles */
+@font-face {
+    font-family: 'hike';
+    src: url('../font/gie_hike/Gie\ Hike.ttf');
+}
+
+h1{
+    font-family: 'hike', sans-serif;
+    font-size: 3em;
+    text-align: center;
+    text-emphasis: 1.5em;
+    letter-spacing: 2px;
+    display: block;
+    margin-top: 75px;
+    color: #7C6C21;
+}
+label, input, select{
+    font-family: 'hike', sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+    text-emphasis: 1.5em;
+    letter-spacing: 2px;
+    display: block;
+    margin: 0 auto;
+    color: #221E1F;
+    margin-top: 10px;
+}
+
+body {
+    background-image: url('../image/hike.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+p {
+    font-family: 'hike', sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+    text-emphasis: 1.5em;
+    letter-spacing: 2px;
+    margin-top: 10px;
+    
+}
