@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +11,7 @@
 <body>
     <h1>Time to hike</h1>
 <section>
-    <form action="hike.php" method="post">
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
         <label for="name">Enter your username:</label>
         <input type="text" id="name" name="name" required>
         <label for="password">Enter your password:</label>
@@ -27,6 +28,6 @@
 
 <footer>
     <p>New to hiking? <a href="php/newHiker.php">Click here</a> to create an account.</p>
-</footer>   
+</footer>
 </body>
 </html>
