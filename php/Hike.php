@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    require 'connexion.php';
+    if(!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] !== true) {
+        session_unset();
+        session_destroy();
+        header("Location: newHiker.php");
+        exit;
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +17,6 @@
     <title>Hike</title>
 </head>
 <body>
-    
+    <h1>Bravo t'es connecter</h1>
 </body>
 </html>
