@@ -61,7 +61,7 @@
             <?php endif; ?>
         </div>
 </section>
-  
+  <h1 id="content"></h1>
 <footer>
     <p>New to hiking? <a href="php/newHiker.php">Click here</a> to create an account.</p>
 </footer>

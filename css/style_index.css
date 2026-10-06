@@ -30,6 +30,11 @@ body {
     background-image: url('../image/hike.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+}
+#content {
+    flex: 1;
 }
 p {
     font-family: 'hike', sans-serif;
@@ -38,8 +43,17 @@ p {
     text-emphasis: 1.5em;
     letter-spacing: 2px;
     vertical-align: bottom;
-    color: #5D8EC6;
-    
+    color: #0a70dd;    
+    padding: 10px;
+    margin: 100px;
+} 
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+div>p {
+    color: red;
 }
 a:link {
     text-decoration: none;
