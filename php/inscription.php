@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
     if ($user === "") {
-        $erreurLogin = "Champ Obligatoir ";
+        $erreurLogin = "Champ Obligatoire";
         $erreurGlobal = true;
     }
     if ($password === "") {
@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if ($erreurGlobal === false) {
         require 'connexion.php';
-        $sql = "INSERT INTO user(user, password, difficulty) VALUES (?,?,?)";
+        $sql = "INSERT INTO user(user, password, difficulty) VALUES (?,?,?);";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
             $user,

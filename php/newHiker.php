@@ -28,7 +28,7 @@
                 <option value="HARD">Hard</option>
                 <option value="EXTREME">Extreme</option>
             </select>
-            <input type="submit" value="Start Hike">
+            <button type="submit">Start Hike</button>
         </form>
     </section>
     <footer>
