@@ -37,19 +37,21 @@ body {
     flex: 1;
 }
 p {
+    margin-top: auto;
     font-family: 'hike', sans-serif;
     font-size: 1.5em;
     text-align: center;
     text-emphasis: 1.5em;
     letter-spacing: 2px;
-    vertical-align: bottom;
-    color: #0a70dd;    
+    color: #0a70dd;
     padding: 10px;
     margin: 100px;
 } 
 footer {
-  position: absolute;
-  bottom: 0;
+  /* position: absolute; */
+  /* bottom: 0; */
+  margin-top: 400px;
+  display: block;
   width: 100%;
 }
 div>p {
