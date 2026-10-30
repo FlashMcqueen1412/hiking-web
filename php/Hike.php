@@ -1,12 +1,12 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
     session_start();
-    require 'connexion.php';
-    if(!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] !== true) {
-        session_unset();
-        session_destroy();
-        header("Location: newHiker.php");
-        exit;
-    }
+}
+
+if (!isset($_SESSION["loggedIn"])) {
+    header("Location: connexion.php");
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,5 +18,6 @@
 </head>
 <body>
     <h1>Bravo t'es connecter</h1>
+    <a href="../index.html">Retour a l'index</a>
 </body>
 </html>

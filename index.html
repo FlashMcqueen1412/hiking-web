@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="us">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiking Time – Randonnées</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="../image/hiking_icon.png">
+</head>
+<body class="bg-gray-900 min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-gray-800/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+            <h1 class="text-2xl font-bold text-white flex items-center gap-2">
+                🥾 Hiking Time
+            </h1>
+            <nav class="hidden md:flex gap-6 text-gray-300">
+                <a href="#" class="hover:text-white transition">Accueil</a>
+                <a href="#" class="hover:text-white transition">Randonnées</a>
+                <a href="#" class="hover:text-white transition">À propos</a>
+                <a href="php/connexion.php" class="bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg transition">Connexion</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="relative h-64 md:h-96 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80"
+             alt="Paysage de montagnes" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent"></div>
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold text-white">Explorez les sommets</h2>
+            <p class="text-gray-300 mt-2 text-lg">Des randonnées sélectionnées pour tous les niveaux</p>
+        </div>
+    </section>
+
+    <!-- Filtres -->
+    <section class="max-w-7xl mx-auto px-4 py-8">
+        <div class="flex flex-wrap gap-3 mb-4">
+            <button class="bg-emerald-600 text-white px-4 py-2 rounded-full text-sm font-medium transition">Toutes</button>
+            <button class="bg-gray-700 text-gray-300 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-600 transition flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-green-500 inline-block"></span> Facile
+            </button>
+            <button class="bg-gray-700 text-gray-300 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-600 transition flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-blue-500 inline-block"></span> Moyen
+            </button>
+            <button class="bg-gray-700 text-gray-300 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-600 transition flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-red-600 inline-block"></span> Difficile
+            </button>
+            <button class="bg-gray-700 text-gray-300 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-600 transition flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-gray-900 border border-gray-400 inline-block"></span> Expert
+            </button>
+        </div>
+        <!-- Légende -->
+        <div class="flex gap-4 text-xs text-gray-400">
+            <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full bg-green-500 inline-block"></span> Facile (&lt; 500 m D+)</span>
+            <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full bg-blue-500 inline-block"></span> Moyen (500–800 m D+)</span>
+            <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full bg-red-600 inline-block"></span> Difficile (800–1500 m D+)</span>
+            <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full bg-gray-900 border border-gray-400 inline-block"></span> Expert (&gt; 1500 m D+)</span>
+        </div>
+    </section>
+
+    <!-- Cartes de randonnées -->
+    <section class="max-w-7xl mx-auto px-4 pb-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Carte 1 – Mont Blanc (Expert) -->
+        <article class="bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-1 transition duration-300">
+            <div class="relative h-56 flex">
+                <div class="w-1/2 h-full overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80"
+                         alt="Mont Blanc" class="w-full h-full object-cover">
+                </div>
+                <div class="w-1/2 h-full overflow-hidden bg-gray-700">
+                    <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=600&q=80"
+                         alt="Carte topographique" class="w-full h-full object-cover opacity-80">
+                </div>
+                <span class="absolute top-3 right-3 w-4 h-4 rounded-full bg-gray-900 border-2 border-white shadow" title="Expert"></span>
+            </div>
+            <div class="p-5">
+                <h3 class="text-xl font-bold text-white mb-1">Mont Blanc</h3>
+                <p class="text-gray-400 text-sm mb-4">📍 Chamonix, France</p>
+                <div class="grid grid-cols-2 gap-3 text-sm mb-4">
+                    <div class="bg-gray-700/50 rounded-lg p-2">
+                        <span class="text-gray-400">Longueur</span>
+                        <p class="text-white font-semibold">17 km</p>
+                    </div>
+                    <div class="bg-gray-700/50 rounded-lg p-2">
+                        <span class="text-gray-400">Durée</span>
+                        <p class="text-white font-semibold">10 h</p>
+                    </div>
+                    <div class="bg-gray-700/50 rounded-lg p-2">
+                        <span class="text-gray-400">Altitude</span>
+                        <p class="text-white font-semibold">4 808 m</p>
+                    </div>
+                    <div class="bg-gray-700/50 rounded-lg p-2">
+                        <span class="text-gray-400">Dénivelé</span>
+                        <p class="text-white font-semibold">+1 200 m</p>
+                    </div>
+                </div>
+                <p class="text-gray-400 text-xs mb-4">
+                    L'ascension du toit de l'Europe. Matériel d'altitude requis (crampons, piolet). Départ du refuge du Goûter.
+                </p>
+                <a href="#" class="block text-center bg-emerald-600 hover:bg-emerald-500 text-white py-2 rounded-lg font-medium transition">
+                    Voir le détail
+                </a>
+            </div>
+        </article>
+
+        <!-- Carte 2 – Tre Cime (Difficile) -->
+        <article class="bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-1 transition duration-300">
+            <div class="relative h-56 flex">
+                <div class="w-1/2 h-full overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=600&q=80"
+                         alt="Dolomites" class="w-full h-full object-cover">
+                </div>
+                <div class="w-1/2 h-full overflow-hidden bg-gray-700">
+                    <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=600&q=80"
+                         alt="Carte topographique" class="w-full h-full object-cover opacity-80">
+                </div>
+                <span class="absolute top-3 right-3 w-4 h-4 rounded-full bg-red-600 border-2 border-white shadow" title="Difficile"></span>
+            </div>
+            <div class="p-5">
+                <h3 class="text-xl font-bold text-white mb-1">Tre Cime di Lavaredo</h3>
+                <p class="text-gray-400 text-sm mb-4">📍 Dolomites, Italie</p>
+                <div class="grid grid-cols-2 gap-3 text-sm mb-4">
+                    <div class="bg-gray-700/50 rounded-lg p-2">
+                        <span class="text-gray-400">Longueur</span>
+                        <p class="text-white font-semibold">10 km</p>
+                    </div>
+                    <div class="bg-gray-700/50 rounded-lg p-2">
+                        <span class="text-gray-400">Durée</span>
+                        <p class="text-white font-semibold">6 h</p>
+                    </div>
+                    <div class="bg-gray-700/50 rounded-lg p-2">
+                        <span class="text-gray-400">Altitude</span>
+                        <p class="text-white font-semibold">2 320 m</p>
+                    </div>
+                    <div class="bg-gray-700/50 rounded-lg p-2">
+                        <span class="text-gray-400">Dénivelé</span>
+                        <p class="text-white font-semibold">+900 m</p>
+                    </div>
+                </div>
+                <p class="text-gray-400 text-xs mb-4">
+                    Tour des Trois Cimes par les refuges. Panorama exceptionnel, sentier bien balisé mais exposé par endroits.
+                </p>
+                <a href="#" class="block text-center bg-emerald-600 hover:bg-emerald-500 text-white py-2 rounded-lg font-medium transition">
+                    Voir le détail
+                </a>
+            </div>
+        </article>
+
+        <!-- Carte 3 – Vermillion (Moyen) -->
+        <article class="bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-1 transition duration-300">
+            <div class="relative h-56 flex">
+                <div class="w-1/2 h-full overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80"
+                         alt="Vermillion" class="w-full h-full object-cover">
+                </div>
+                <div class="w-1/2 h-full overflow-hidden bg-gray-700">
+                    <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=600&q=80"
+                         alt="Carte topographique" class="w-full h-full object-cover opacity-80">
+                </div>
+                <span class="absolute top-3 right-3 w-4 h-4 rounded-full bg-blue-500 border-2 border-white shadow" title="Moyen"></span>
+            </div>
+            <div class="p-5">
+                <h3 class="text-xl font-bold text-white mb-1">Vermillion Valley</h3>
+                <p class="text-gray-400 text-sm mb-4">📍 Banff, Canada</p>
+                <div class="grid grid-cols-2 gap-3 text-sm mb-4">
+                    <div class="bg-gray-700/50 rounded-lg p-2">
+                        <span class="text-gray-400">Longueur</span>
+                        <p class="text-white font-semibold">7 km</p>
+                    </div>
+                    <div class="bg-gray-700/50 rounded-lg p-2">
+                        <span class="text-gray-400">Durée</span>
+                        <p class="text-white font-semibold">3 h 30</p>
+                    </div>
+                    <div class="bg-gray-700/50 rounded-lg p-2">
+                        <span class="text-gray-400">Altitude</span>
+                        <p class="text-white font-semibold">1 850 m</p>
+                    </div>
+                    <div class="bg-gray-700/50 rounded-lg p-2">
+                        <span class="text-gray-400">Dénivelé</span>
+                        <p class="text-white font-semibold">+450 m</p>
+                    </div>
+                </div>
+                <p class="text-gray-400 text-xs mb-4">
+                    Vallée aux lacs turquoise et falaises rouges. Parfaite pour une première randonnée en altitude.
+                </p>
+                <a href="#" class="block text-center bg-emerald-600 hover:bg-emerald-500 text-white py-2 rounded-lg font-medium transition">
+                    Voir le détail
+                </a>
+            </div>
+        </article>
+
+        <!-- Carte 4 – Alpensee (Facile) -->
+        <article class="bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-1 transition duration-300">
+            <div class="relative h-56 flex">
+                <div class="w-1/2 h-full overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&q=80"
+                         alt="Eiger" class="w-full h-full object-cover">
+                </div>
+                <div class="w-1/2 h-full overflow-hidden bg-gray-700">
+                    <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=600&q=80"
+                         alt="Carte topographique" class="w-full h-full object-cover opacity-80">
+                </div>
+                <span class="absolute top-3 right-3 w-4 h-4 rounded-full bg-green-500 border-2 border-white shadow" title="Facile"></span>
+            </div>
+            <div class="p-5">
+                <h3 class="text-xl font-bold text-white mb-1">Alpensee</h3>
+                <p class="text-gray-400 text-sm mb-4">📍 Interlaken, Suisse</p>
+                <div class="grid grid-cols-2 gap-3 text-sm mb-4">
+                    <div class="bg-gray-700/50 rounded-lg p-2">
+                        <span class="text-gray-400">Longueur</span>
+                        <p class="text-white font-semibold">12 km</p>
+                    </div>
+                    <div class="bg-gray-700/50 rounded-lg p-2">
+                        <span class="text-gray-400">Durée</span>
+                        <p class="text-white font-semibold">4 h</p>
+                    </div>
+                    <div class="bg-gray-700/50 rounded-lg p-2">
+                        <span class="text-gray-400">Altitude</span>
+                        <p class="text-white font-semibold">1 600 m</p>
+                    </div>
+                    <div class="bg-gray-700/50 rounded-lg p-2">
+                        <span class="text-gray-400">Dénivelé</span>
+                        <p class="text-white font-semibold">+200 m</p>
+                    </div>
+                </div>
+                <p class="text-gray-400 text-xs mb-4">
+                    Balade lacustre panoramique avec vue sur l'Eiger, le Mönch et la Jungfrau. Idéale en famille.
+                </p>
+                <a href="#" class="block text-center bg-emerald-600 hover:bg-emerald-500 text-white py-2 rounded-lg font-medium transition">
+                    Voir le détail
+                </a>
+            </div>
+        </article>
+
+        <!-- Carte 5 – Lake Agnes (Difficile) -->
+        <article class="bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-1 transition duration-300">
+            <div class="relative h-56 flex">
+                <div class="w-1/2 h-full overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600&q=80"
+                         alt="Banff" class="w-full h-full object-cover">
+                </div>
+                <div class="w-1/2 h-full overflow-hidden bg-gray-700">
+                    <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=600&q=80"
+                         alt="Carte topographique" class="w-full h-full object-cover opacity-80">
+                </div>
+                <span class="absolute top-3 right-3 w-4 h-4 rounded-full bg-red-600 border-2 border-white shadow" title="Difficile"></span>
+            </div>
+            <div class="p-5">
+                <h3 class="text-xl font-bold text-white mb-1">Lake Agnes Tea House</h3>
+                <p class="text-gray-400 text-sm mb-4">📍 Banff, Canada</p>
+                <div class="grid grid-cols-2 gap-3 text-sm mb-4">
+                    <div class="bg-gray-700/50 rounded-lg p-2">
+                        <span class="text-gray-400">Longueur</span>
+                        <p class="text-white font-semibold">11 km</p>
+                    </div>
+                    <div class="bg-gray-700/50 rounded-lg p-2">
+                        <span class="text-gray-400">Durée</span>
+                        <p class="text-white font-semibold">5 h</p>
+                    </div>
+                    <div class="bg-gray-700/50 rounded-lg p-2">
+                        <span class="text-gray-400">Altitude</span>
+                        <p class="text-white font-semibold">1 950 m</p>
+                    </div>
+                    <div class="bg-gray-700/50 rounded-lg p-2">
+                        <span class="text-gray-400">Dénivelé</span>
+                        <p class="text-white font-semibold">+700 m</p>
+                    </div>
+                </div>
+                <p class="text-gray-400 text-xs mb-4">
+                    Ascension au lac turquoise avec arrêt au tea house historique. Chemin de pierre bien aménagé mais raide.
+                </p>
+                <a href="#" class="block text-center bg-emerald-600 hover:bg-emerald-500 text-white py-2 rounded-lg font-medium transition">
+                    Voir le détail
+                </a>
+            </div>
+        </article>
+
+        <!-- Carte 6 – Mont Royal (Facile) -->
+        <article class="bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-1 transition duration-300">
+            <div class="relative h-56 flex">
+                <div class="w-1/2 h-full overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1486911278844-a81c5267e227?w=600&q=80"
+                         alt="Champlain" class="w-full h-full object-cover">
+                </div>
+                <div class="w-1/2 h-full overflow-hidden bg-gray-700">
+                    <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=600&q=80"
+                         alt="Carte topographique" class="w-full h-full object-cover opacity-80">
+                </div>
+                <span class="absolute top-3 right-3 w-4 h-4 rounded-full bg-green-500 border-2 border-white shadow" title="Facile"></span>
+            </div>
+            <div class="p-5">
+                <h3 class="text-xl font-bold text-white mb-1">Mont Royal Summit</h3>
+                <p class="text-gray-400 text-sm mb-4">📍 Montréal, Canada</p>
+                <div class="grid grid-cols-2 gap-3 text-sm mb-4">
+                    <div class="bg-gray-700/50 rounded-lg p-2">
+                        <span class="text-gray-400">Longueur</span>
+                        <p class="text-white font-semibold">3 km</p>
+                    </div>
+                    <div class="bg-gray-700/50 rounded-lg p-2">
+                        <span class="text-gray-400">Durée</span>
+                        <p class="text-white font-semibold">1 h 30</p>
+                    </div>
+                    <div class="bg-gray-700/50 rounded-lg p-2">
+                        <span class="text-gray-400">Altitude</span>
+                        <p class="text-white font-semibold">233 m</p>
+                    </div>
+                    <div class="bg-gray-700/50 rounded-lg p-2">
+                        <span class="text-gray-400">Dénivelé</span>
+                        <p class="text-white font-semibold">+233 m</p>
+                    </div>
+                </div>
+                <p class="text-gray-400 text-xs mb-4">
+                    Vue panoramique sur la ville. Parfait pour se familiariser avec la randonnée ou une sortie rapide.
+                </p>
+                <a href="#" class="block text-center bg-emerald-600 hover:bg-emerald-500 text-white py-2 rounded-lg font-medium transition">
+                    Voir le détail
+                </a>
+            </div>
+        </article>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 border-t border-gray-700 py-8 text-center text-gray-400 text-sm">
+        <p>&copy; 2025 Hiking Time – Tous droits réservés</p>
+    </footer>
+
+</body>
+</html>   
